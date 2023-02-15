@@ -5,6 +5,10 @@
     flex: 1;
 }
 
+mat-radio-group.flex-container {
+  flex: 0;
+}
+
 .gap-10 {
     gap: 10px;
 }
@@ -42,6 +46,7 @@ label {
 
 .row {
     width: 100%;
+    justify-content: space-between;
 }
 
 .flex-50 {

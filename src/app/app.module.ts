@@ -15,6 +15,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import {MatIconModule} from '@angular/material/icon';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

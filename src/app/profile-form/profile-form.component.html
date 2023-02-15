@@ -1,282 +1,299 @@
 <div style="display: flex; flex-flow: column nowrap; align-items: center; padding: 80px 10vw;">
-    <h1>Client Profile Quenstionnaire</h1>
+  <h1>Client Profile Quenstionnaire</h1>
 
-    <form [formGroup]="form" (ngSubmit)="submit()">
-        <div class="section" style="border: none;">
-            <div class="flex-container gap-40 row">
-                <div class="flex-container gap-10" style="flex: 0;">
-                    <label>Marital Status:</label>
-                    <mat-checkbox color="primary" [(ngModel)]="checked">Single</mat-checkbox>
-                    <mat-checkbox color="primary" [(ngModel)]="checked">Married</mat-checkbox>
-                    <mat-checkbox color="primary" [(ngModel)]="checked">Divorced</mat-checkbox>
-                    <mat-checkbox color="primary" [(ngModel)]="checked">Widow(er)</mat-checkbox>
-                </div>
-        
-                <div style="height: 25px; border-left: solid 1px #c1a301;"></div>
-        
-                <div class="flex-container gap-10">
-                    <label>Wedding Date:</label>
-                    <input>
-                </div>
-            </div>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="section" style="border: none;">
+      <div class="flex-container gap-40 row">
+
+        <mat-radio-group formControlName="mStatus" class="flex-container gap-10">
+          <label>Marital Status:</label>
+          <mat-radio-button color="primary" [value]="'Single'">Single</mat-radio-button>
+          <mat-radio-button color="primary" [value]="'Married'">Married</mat-radio-button>
+          <mat-radio-button color="primary" [value]="'Divorced'">Divorced</mat-radio-button>
+          <mat-radio-button color="primary" [value]="'Widow(er)'">Widow(er)</mat-radio-button>
+        </mat-radio-group>
+
+        <div style="height: 25px; border-left: solid 1px #c1a301;"></div>
+
+        <div class="flex-container gap-10">
+          <label>Wedding Date:</label>
+          <input type="date" formControlName="mDate" required>
         </div>
-    
-    
-        <div class="section gap-20">
-            <h2>CLIENT 1</h2>
-    
-            <div class="flex-container gap-10">
-                <label>Name (First, Middle, Last):</label>
-                <input>
-            </div>
-    
-            <div class="flex-container gap-40">
-                <div class="flex-container gap-10">
-                    <label>SSN:</label>
-                    <input>
-                </div>
-                <div class="flex-container gap-10">
-                    <label>DOB:</label>
-                    <input>
-                </div>
-            </div>
-    
-            <div class="flex-container gap-10">
-                <label>Employment status:</label>
-                <mat-checkbox color="primary" [(ngModel)]="checked">Employed</mat-checkbox>
-                <mat-checkbox color="primary" [(ngModel)]="checked">Self-employed</mat-checkbox>
-                <mat-checkbox color="primary" [(ngModel)]="checked">Student</mat-checkbox>
-                <mat-checkbox color="primary" [(ngModel)]="checked">Retired</mat-checkbox>
-                <mat-checkbox color="primary" [(ngModel)]="checked">Other:</mat-checkbox>
-                <input>
-            </div>
-    
-            <div class="flex-container gap-40">
-                <div class="flex-container gap-10">
-                    <label>Employer name:</label>
-                    <input>
-                </div>
-                <div class="flex-container gap-10">
-                    <label>Owner's occupation:</label>
-                    <input>
-                </div>
-            </div>
-    
-            <div class="flex-container gap-40 wrap">
-                <div class="flex-container gap-10 flex-50">
-                    <label>Employer address:</label>
-                    <input>
-                </div>
-                <div class="flex-container gap-40">
-                    <div class="flex-container gap-10 flex-10">
-                        <label>City:</label>
-                        <input>
-                    </div>
-                    <div class="flex-container gap-10 flex-4">
-                        <label>State:</label>
-                        <input style="flex: 0; width: 50px;">
-                    </div>
-                    <div class="flex-container gap-10 flex-8">
-                        <label>ZIP:</label>
-                        <input>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="sub-section gap-20">
-                <h3>VERIFICATION OF CLIENT</h3>
-    
-                <div class="flex-container gap-10">
-                    <label>Type (must be government-issued photo ID):</label>
-                    <input>
-                </div>
-    
-                <div class="flex-container gap-40 wrap">
-                    <div class="flex-container gap-10 flex-50">
-                        <label>ID#:</label>
-                        <input>
-                    </div>
-                    <div class="flex-container gap-40">
-                        <div class="flex-container gap-10 flex-4">
-                            <label>Issuer (state, gov't agency, etc.):</label>
-                            <input style="flex: 0; width: 100px;">
-                        </div>
-                        <div class="flex-container gap-10 flex-10">
-                            <label>Exp. date:</label>
-                            <input>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+
+
+    <div class="section gap-20">
+      <h2>CLIENT 1</h2>
+
+      <div class="flex-container gap-10">
+        <label>Name (First, Middle, Last):</label>
+        <input formControlName="nameA">
+      </div>
+
+      <div class="flex-container gap-40">
+        <div class="flex-container gap-10">
+          <label>SSN:</label>
+          <input formControlName="ssnA">
         </div>
-    
-    
-        <div class="section gap-20">
-            <h2>CLIENT 2</h2>
-    
-            <div class="flex-container gap-10">
-                <label>Name (First, Middle, Last):</label>
-                <input>
-            </div>
-    
-            <div class="flex-container gap-40">
-                <div class="flex-container gap-10">
-                    <label>SSN:</label>
-                    <input>
-                </div>
-                <div class="flex-container gap-10">
-                    <label>DOB:</label>
-                    <input>
-                </div>
-            </div>
-    
-            <div class="flex-container gap-10">
-                <label>Employment status:</label>
-                <mat-checkbox color="primary" [(ngModel)]="checked">Employed</mat-checkbox>
-                <mat-checkbox color="primary" [(ngModel)]="checked">Self-employed</mat-checkbox>
-                <mat-checkbox color="primary" [(ngModel)]="checked">Student</mat-checkbox>
-                <mat-checkbox color="primary" [(ngModel)]="checked">Retired</mat-checkbox>
-                <mat-checkbox color="primary" [(ngModel)]="checked">Other:</mat-checkbox>
-                <input>
-            </div>
-    
-            <div class="flex-container gap-40">
-                <div class="flex-container gap-10">
-                    <label>Employer name:</label>
-                    <input>
-                </div>
-                <div class="flex-container gap-10">
-                    <label>Owner's occupation:</label>
-                    <input>
-                </div>
-            </div>
-    
-            <div class="flex-container gap-40 wrap">
-                <div class="flex-container gap-10 flex-50">
-                    <label>Employer address:</label>
-                    <input>
-                </div>
-                <div class="flex-container gap-40">
-                    <div class="flex-container gap-10 flex-10">
-                        <label>City:</label>
-                        <input>
-                    </div>
-                    <div class="flex-container gap-10 flex-4">
-                        <label>State:</label>
-                        <input style="flex: 0; width: 50px;">
-                    </div>
-                    <div class="flex-container gap-10 flex-8">
-                        <label>ZIP:</label>
-                        <input>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="sub-section gap-20">
-                <h3>VERIFICATION OF CLIENT</h3>
-    
-                <div class="flex-container gap-10">
-                    <label>Type (must be government-issued photo ID):</label>
-                    <input>
-                </div>
-    
-                <div class="flex-container gap-40 wrap">
-                    <div class="flex-container gap-10 flex-50">
-                        <label>ID#:</label>
-                        <input>
-                    </div>
-                    <div class="flex-container gap-40">
-                        <div class="flex-container gap-10 flex-4">
-                            <label>Issuer (state, gov't agency, etc.):</label>
-                            <input style="flex: 0; width: 100px;">
-                        </div>
-                        <div class="flex-container gap-10 flex-10">
-                            <label>Exp. date:</label>
-                            <input>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="flex-container gap-10">
+          <label>DOB:</label>
+          <input type="date" formControlName="dobA" required>
         </div>
-        
-        <div class="section gap-20">
-            <h2>CONTACT INFORMATION</h2>
-    
-            <div class="flex-container gap-40 wrap">
-                <div class="flex-container gap-10 flex-50">
-                    <label>Primary address:</label>
-                    <input>
-                </div>
-                <div class="flex-container gap-40">
-                    <div class="flex-container gap-10 flex-10">
-                        <label>City:</label>
-                        <input>
-                    </div>
-                    <div class="flex-container gap-10 flex-4">
-                        <label>State:</label>
-                        <input style="flex: 0; width: 50px;">
-                    </div>
-                    <div class="flex-container gap-10 flex-8">
-                        <label>ZIP:</label>
-                        <input>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="flex-container gap-40 wrap">
-                <div class="flex-container gap-10 flex-50">
-                    <label>Secondary address:</label>
-                    <input>
-                </div>
-                <div class="flex-container gap-40">
-                    <div class="flex-container gap-10 flex-10">
-                        <label>City:</label>
-                        <input>
-                    </div>
-                    <div class="flex-container gap-10 flex-4">
-                        <label>State:</label>
-                        <input style="flex: 0; width: 50px;">
-                    </div>
-                    <div class="flex-container gap-10 flex-8">
-                        <label>ZIP:</label>
-                        <input>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="flex-container gap-10">
-                <label>Dates at secondary address (if applicable):</label>
-                <input>
-                <label>to</label>
-                <input>
-            </div>
-    
-            <div class="flex-container gap-40">
-                <div class="flex-container gap-10">
-                    <label>Home phone:</label>
-                    <input>
-                </div>
-                <div class="flex-container gap-10">
-                    <label>Cell:</label>
-                    <input>
-                </div>
-            </div>
-    
-            <div class="flex-container gap-40">
-                <div class="flex-container gap-10">
-                    <label>Primary email:</label>
-                    <input>
-                </div>
-                <div class="flex-container gap-10">
-                    <label>Secondary email:</label>
-                    <input>
-                </div>
-            </div>
+      </div>
+
+      <div class="flex-container gap-10">
+        <label>Employment status:</label>
+        <mat-radio-group formControlName="eStatusA" class="flex-container gap-10">
+          <mat-radio-button color="primary" [value]="'Employed'">Employed</mat-radio-button>
+          <mat-radio-button color="primary" [value]="'Self-employed'">Self-employed</mat-radio-button>
+          <mat-radio-button color="primary" [value]="'Student'">Student</mat-radio-button>
+          <mat-radio-button color="primary" [value]="'Retired'">Retired</mat-radio-button>
+          <mat-radio-button color="primary" [value]="'Other'">Other:</mat-radio-button>
+        </mat-radio-group>
+        <input formControlName="eStatusOtherA">
+      </div>
+
+      <div class="flex-container gap-40">
+        <div class="flex-container gap-10">
+          <label>Employer name:</label>
+          <input formControlName="eNameA">
+        </div>
+        <div class="flex-container gap-10">
+          <label>Owner's occupation:</label>
+          <input formControlName="eOccupationA">
+        </div>
+      </div>
+
+      <div class="flex-container gap-40 wrap">
+        <div class="flex-container gap-10 flex-50">
+          <label>Employer address:</label>
+          <input formControlName="eAddressA">
+        </div>
+        <div class="flex-container gap-40">
+          <div class="flex-container gap-10 flex-10">
+            <label>City:</label>
+            <input formControlName="eCityA">
+          </div>
+          <div class="flex-container gap-10 flex-4">
+            <label>State:</label>
+            <select formControlName="eStateA">
+              <option value=""></option>
+              <option *ngFor="let s of stateLabelValues" value="{{s.label}}">{{s.label}}</option>
+            </select>
+          </div>
+          <div class="flex-container gap-10 flex-8">
+            <label>ZIP:</label>
+            <input formControlName="eZipA">
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-section gap-20">
+        <h3>VERIFICATION OF CLIENT</h3>
+
+        <div class="flex-container gap-10">
+          <label>Type (must be government-issued photo ID):</label>
+          <input formControlName="typeA">
         </div>
 
-        <div class="flex-container" style="justify-content: flex-end;">
-            <button mat-raised-button color="primary">SUBMIT</button>
+        <div class="flex-container gap-40 wrap">
+          <div class="flex-container gap-10 flex-50">
+            <label>ID#:</label>
+            <input formControlName="idA">
+          </div>
+          <div class="flex-container gap-40">
+            <div class="flex-container gap-10 flex-10">
+              <label>Issuer (state, gov't agency, etc.):</label>
+              <input formControlName="issuerA">
+            </div>
+            <div class="flex-container gap-10" style="flex: 0;">
+              <label>Exp. date:</label>
+              <input type="date" formControlName="expDateA" required>
+            </div>
+          </div>
         </div>
-    </form>
-    
+      </div>
+    </div>
+
+
+    <div class="section gap-20">
+      <h2>CLIENT 2</h2>
+
+      <div class="flex-container gap-10">
+        <label>Name (First, Middle, Last):</label>
+        <input formControlName="nameB">
+      </div>
+
+      <div class="flex-container gap-40">
+        <div class="flex-container gap-10">
+          <label>SSN:</label>
+          <input formControlName="ssnB">
+        </div>
+        <div class="flex-container gap-10">
+          <label>DOB:</label>
+          <input type="date" formControlName="dobB" required>
+        </div>
+      </div>
+
+      <div class="flex-container gap-10">
+        <label>Employment status:</label>
+        <mat-radio-group formControlName="eStatusB" class="flex-container gap-10">
+          <mat-radio-button color="primary" [value]="'Employed'">Employed</mat-radio-button>
+          <mat-radio-button color="primary" [value]="'Self-employed'">Self-employed</mat-radio-button>
+          <mat-radio-button color="primary" [value]="'Student'">Student</mat-radio-button>
+          <mat-radio-button color="primary" [value]="'Retired'">Retired</mat-radio-button>
+          <mat-radio-button color="primary" [value]="'Other'">Other:</mat-radio-button>
+        </mat-radio-group>
+        <input formControlName="eStatusOtherB">
+      </div>
+
+      <div class="flex-container gap-40">
+        <div class="flex-container gap-10">
+          <label>Employer name:</label>
+          <input formControlName="eNameB">
+        </div>
+        <div class="flex-container gap-10">
+          <label>Owner's occupation:</label>
+          <input formControlName="eOccupationB">
+        </div>
+      </div>
+
+      <div class="flex-container gap-40 wrap">
+        <div class="flex-container gap-10 flex-50">
+          <label>Employer address:</label>
+          <input formControlName="eAddressB">
+        </div>
+        <div class="flex-container gap-40">
+          <div class="flex-container gap-10 flex-10">
+            <label>City:</label>
+            <input formControlName="eCityB">
+          </div>
+          <div class="flex-container gap-10 flex-4">
+            <label>State:</label>
+            <select formControlName="eStateB">
+              <option value=""></option>
+              <option *ngFor="let s of stateLabelValues" value="{{s.label}}">{{s.label}}</option>
+            </select>
+          </div>
+          <div class="flex-container gap-10 flex-8">
+            <label>ZIP:</label>
+            <input formControlName="eZipB">
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-section gap-20">
+        <h3>VERIFICATION OF CLIENT</h3>
+
+        <div class="flex-container gap-10">
+          <label>Type (must be government-issued photo ID):</label>
+          <input formControlName="typeB">
+        </div>
+
+        <div class="flex-container gap-40 wrap">
+          <div class="flex-container gap-10 flex-50">
+            <label>ID#:</label>
+            <input formControlName="idB">
+          </div>
+          <div class="flex-container gap-40">
+            <div class="flex-container gap-10 flex-10">
+              <label>Issuer (state, gov't agency, etc.):</label>
+              <input formControlName="issuerB">
+            </div>
+            <div class="flex-container gap-10" style="flex: 0;">
+              <label>Exp. date:</label>
+              <input type="date" formControlName="expDateB" required>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section gap-20">
+      <h2>CONTACT INFORMATION</h2>
+
+      <div class="flex-container gap-40 wrap">
+        <div class="flex-container gap-10 flex-50">
+          <label>Primary address:</label>
+          <input formControlName="pAddress">
+        </div>
+        <div class="flex-container gap-40">
+          <div class="flex-container gap-10 flex-10">
+            <label>City:</label>
+            <input formControlName="pCity">
+          </div>
+          <div class="flex-container gap-10 flex-4">
+            <label>State:</label>
+            <select formControlName="pState">
+              <option value=""></option>
+              <option *ngFor="let s of stateLabelValues" value="{{s.label}}">{{s.label}}</option>
+            </select>
+          </div>
+          <div class="flex-container gap-10 flex-8">
+            <label>ZIP:</label>
+            <input formControlName="pZip">
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-container gap-40 wrap">
+        <div class="flex-container gap-10 flex-50">
+          <label>Secondary address:</label>
+          <input formControlName="sAddress">
+        </div>
+        <div class="flex-container gap-40">
+          <div class="flex-container gap-10 flex-10">
+            <label>City:</label>
+            <input formControlName="sCity">
+          </div>
+          <div class="flex-container gap-10 flex-4">
+            <label>State:</label>
+            <select formControlName="sState">
+              <option value=""></option>
+              <option *ngFor="let s of stateLabelValues" value="{{s.label}}">{{s.label}}</option>
+            </select>
+          </div>
+          <div class="flex-container gap-10 flex-8">
+            <label>ZIP:</label>
+            <input formControlName="sZip">
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-container gap-10">
+        <label>Dates at secondary address (if applicable):</label>
+        <input type="date" formControlName="sDateA" required>
+        <label>to</label>
+        <input type="date" formControlName="sDateB" required>
+      </div>
+
+      <div class="flex-container gap-40">
+        <div class="flex-container gap-10">
+          <label>Home phone:</label>
+          <input formControlName="hPhone">
+        </div>
+        <div class="flex-container gap-10">
+          <label>Cell:</label>
+          <input formControlName="cPhone">
+        </div>
+      </div>
+
+      <div class="flex-container gap-40">
+        <div class="flex-container gap-10">
+          <label>Primary email:</label>
+          <input formControlName="pEmail">
+        </div>
+        <div class="flex-container gap-10">
+          <label>Secondary email:</label>
+          <input formControlName="sEmail">
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-container" style="justify-content: flex-end;">
+      <button mat-raised-button color="primary" type="submit">SUBMIT</button>
+    </div>
+  </form>
+
 </div>
