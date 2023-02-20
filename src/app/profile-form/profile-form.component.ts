@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from '../auth.service';
 import { ProfileFormService } from './profile-form.service';
 
 @Component({
@@ -65,64 +66,75 @@ export class ProfileFormComponent implements OnInit {
     ];
 
 
-  constructor(private formService: ProfileFormService){}
+  constructor(private formService: ProfileFormService, private authService: AuthService){}
 
   ngOnInit(): void {
+    //this.authService.login('');
+    this.formService.getForms().subscribe({
+      next: (res) => {
+        //this.forms = res;
+        console.dir(res);
+      },
+      error: err => console.log(err),
+      complete: () => console.log('completed')
+    });
+
     this.form = new FormGroup({
-      mStatus: new FormControl(),
-      mDate: new FormControl(),
+      mStatus: new FormControl(''),
+      mDate: new FormControl(''),
       mMonth: new FormControl(''),
-      mDay: new FormControl(),
-      mYear: new FormControl(),
-      nameA: new FormControl(),
-      ssnA: new FormControl(),
-      dobA: new FormControl(),
-      eStatusA: new FormControl(),
-      eStatusOtherA: new FormControl(),
-      eNameA: new FormControl(),
-      eOccupationA: new FormControl(),
-      eAddressA: new FormControl(),
-      eCityA: new FormControl(),
-      eStateA: new FormControl(),
-      eZipA: new FormControl(),
-      typeA: new FormControl(),
-      idA: new FormControl(),
-      issuerA: new FormControl(),
-      expDateA: new FormControl(),
-      nameB: new FormControl(),
-      ssnB: new FormControl(),
-      dobB: new FormControl(),
-      eStatusB: new FormControl(),
-      eStatusOtherB: new FormControl(),
-      eNameB: new FormControl(),
-      eOccupationB: new FormControl(),
-      eAddressB: new FormControl(),
-      eCityB: new FormControl(),
-      eStateB: new FormControl(),
-      eZipB: new FormControl(),
-      typeB: new FormControl(),
-      idB: new FormControl(),
-      issuerB: new FormControl(),
-      expDateB: new FormControl(),
-      pAddress: new FormControl(),
-      pCity: new FormControl(),
-      pState: new FormControl(),
-      pZip: new FormControl(),
-      sAddress: new FormControl(),
-      sCity: new FormControl(),
-      sState: new FormControl(),
-      sZip: new FormControl(),
-      sDateA: new FormControl(),
-      sDateB: new FormControl(),
-      hPhone: new FormControl(),
-      cPhone: new FormControl(),
-      pEmail: new FormControl(),
-      sEmail: new FormControl()
+      mDay: new FormControl(''),
+      mYear: new FormControl(''),
+      nameA: new FormControl(''),
+      ssnA: new FormControl(''),
+      dobA: new FormControl(new Date()),
+      eStatusA: new FormControl(''),
+      eStatusOtherA: new FormControl(''),
+      eNameA: new FormControl(''),
+      eOccupationA: new FormControl(''),
+      eAddressA: new FormControl(''),
+      eCityA: new FormControl(''),
+      eStateA: new FormControl(''),
+      eZipA: new FormControl(''),
+      typeA: new FormControl(''),
+      idA: new FormControl(''),
+      issuerA: new FormControl(''),
+      expDateA: new FormControl(new Date()),
+      nameB: new FormControl(''),
+      ssnB: new FormControl(''),
+      dobB: new FormControl(new Date()),
+      eStatusB: new FormControl(''),
+      eStatusOtherB: new FormControl(''),
+      eNameB: new FormControl(''),
+      eOccupationB: new FormControl(''),
+      eAddressB: new FormControl(''),
+      eCityB: new FormControl(''),
+      eStateB: new FormControl(''),
+      eZipB: new FormControl(''),
+      typeB: new FormControl(''),
+      idB: new FormControl(''),
+      issuerB: new FormControl(''),
+      expDateB: new FormControl(new Date()),
+      pAddress: new FormControl(''),
+      pCity: new FormControl(''),
+      pState: new FormControl(''),
+      pZip: new FormControl(''),
+      sAddress: new FormControl(''),
+      sCity: new FormControl(''),
+      sState: new FormControl(''),
+      sZip: new FormControl(''),
+      sDateA: new FormControl(new Date()),
+      sDateB: new FormControl(new Date()),
+      hPhone: new FormControl(''),
+      cPhone: new FormControl(''),
+      pEmail: new FormControl(''),
+      sEmail: new FormControl('')
     })
   }
 
   submit() {
-    this.formService.sendForm(this.form.value);
+    console.dir(this.form.value);
+    this.formService.postForm(this.form.value);
   }
 
 }

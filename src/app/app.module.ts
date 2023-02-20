@@ -16,16 +16,27 @@ import {MatIconModule} from '@angular/material/icon';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsListComponent } from './forms-list/forms-list.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
+import { AuthInterceptor } from './auth-interceptor';
+import { JwtModule } from "@auth0/angular-jwt";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CalendarComponent,
-    ProfileFormComponent
+    ProfileFormComponent,
+    FormsListComponent,
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -36,9 +47,11 @@ import {MatRadioModule} from '@angular/material/radio';
     MatCardModule,
     MatIconModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatExpansionModule,
+    JwtModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
