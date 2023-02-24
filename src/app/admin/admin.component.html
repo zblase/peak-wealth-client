@@ -1,3 +1,15 @@
-<div>
-  <router-outlet></router-outlet>
+<div style="display: flex; flex: 1;">
+  <div class="side-nav">
+    <div class="nav-btn-container" *ngFor="let btn of navButtons">
+      <button mat-button (click)="btn.selected = !btn.selected" [ngClass]="btn.selected ? 'selected' : ''">
+        <mat-icon>keyboard_arrow_down</mat-icon> {{btn.name}}
+      </button>
+      <div class="nav-child-container" *ngIf="btn.selected">
+        <button mat-button *ngFor="let child of btn.children" routerLink="{{child.route}}">{{child.name}}</button>
+      </div>
+    </div>
+  </div>
+  <div style="flex: 1; background-color: #f7f7f7;">
+    <router-outlet></router-outlet>
+  </div>
 </div>

@@ -12,10 +12,10 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'calendar', component: CalendarComponent},
-  {path: 'profile-form', component: ProfileFormComponent},
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
     {path: 'forms-list', component: FormsListComponent},
+    {path: 'profile-form', component: ProfileFormComponent},
   ]}
 ];
 

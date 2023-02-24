@@ -1,14 +1,245 @@
-<div>
+<div style="width: 100%; padding: 2% 10%;">
   <mat-accordion>
     <mat-expansion-panel *ngFor="let form of forms">
       <mat-expansion-panel-header>
         <mat-panel-title>{{ form.nameA }}</mat-panel-title>
-        <mat-panel-description>{{ form.created }}</mat-panel-description>
+        <mat-panel-description>{{ formatDate(form.created) }}</mat-panel-description>
       </mat-expansion-panel-header>
 
       <div>
+        <div class="form-sect">
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Marital Status:</label>
+              <p>{{form.mStatus}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>Wedding Date:</label>
+              <p>{{formatDate(form.mDate)}}</p>
+            </div>
+          </div>
+        </div>
 
+        <div class="form-sect">
+          <h2>CLIENT 1</h2>
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Name:</label>
+              <p>{{form.nameA}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>SSN:</label>
+              <p>{{form.ssnA}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>DOB:</label>
+              <p>{{formatDate(form.dobA)}}</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Employment Status:</label>
+              <p>{{form.eStatusA}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>Employer Name:</label>
+              <p>{{form.eNameA}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>Owner's Occupation:</label>
+              <p>{{form.eOccupationA}}</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Employer Address:</label>
+              <p>{{form.eAddressA}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>City:</label>
+              <p>{{form.eCityA}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>State:</label>
+              <p>{{form.eStateA}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>ZIP:</label>
+              <p>{{form.eZipA}}</p>
+            </div>
+          </div>
+
+          <h3>VERIFICATION OF CLIENT</h3>
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Type (must be government-issued photo ID):</label>
+              <p>{{form.typeA}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>ID#:</label>
+              <p>{{form.idA}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>Issuer (state, gov't agency, etc.):</label>
+              <p>{{form.issuerA}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>Exp. Date:</label>
+              <p>{{formatDate(form.expDateA)}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-sect">
+          <h2>CLIENT 2</h2>
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Name:</label>
+              <p>{{form.nameB}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>SSN:</label>
+              <p>{{form.ssnB}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>DOB:</label>
+              <p>{{formatDate(form.dobB)}}</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Employment Status:</label>
+              <p>{{form.eStatusB}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>Employer Name:</label>
+              <p>{{form.eNameB}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>Owner's Occupation:</label>
+              <p>{{form.eOccupationB}}</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Employer Address:</label>
+              <p>{{form.eAddressB}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>City:</label>
+              <p>{{form.eCityB}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>State:</label>
+              <p>{{form.eStateB}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>ZIP:</label>
+              <p>{{form.eZipB}}</p>
+            </div>
+          </div>
+
+          <h3>VERIFICATION OF CLIENT</h3>
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Type (must be government-issued photo ID):</label>
+              <p>{{form.typeB}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>ID#:</label>
+              <p>{{form.idB}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>Issuer (state, gov't agency, etc.):</label>
+              <p>{{form.issuerB}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>Exp. Date:</label>
+              <p>{{formatDate(form.expDateB)}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-sect" style="border-bottom: 0;">
+          <h2>CONTACT INFORMATION</h2>
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Primary Address:</label>
+              <p>{{form.pAddress}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>City:</label>
+              <p>{{form.pCity}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>State:</label>
+              <p>{{form.pState}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>ZIP:</label>
+              <p>{{form.pZip}}</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Secondary Address:</label>
+              <p>{{form.sAddress}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>City:</label>
+              <p>{{form.sCity}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>State:</label>
+              <p>{{form.sState}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>ZIP:</label>
+              <p>{{form.sZip}}</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Dates at secondary address:</label>
+              <p>{{formatDate(form.sDateA)}} - {{formatDate(form.sDateB)}}</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Home Phone:</label>
+              <p>{{form.hPhone}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>Cell Phone:</label>
+              <p>{{form.cPhone}}</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="title-val-wrapper">
+              <label>Primary Email:</label>
+              <p>{{form.pEmail}}</p>
+            </div>
+            <div class="title-val-wrapper">
+              <label>Secondary Email:</label>
+              <p>{{form.sEmail}}</p>
+            </div>
+          </div>
+        </div>
       </div>
+
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="deleteForm(form.id)">DELETE</button>
+        <button mat-button color="primary">EDIT</button>
+      </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

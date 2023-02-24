@@ -1,0 +1,19 @@
+.form-row {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 20px;
+}
+
+.form-sect {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 20px 0px;
+  border-bottom: solid 1px #c1a301;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 400;
+}

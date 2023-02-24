@@ -6,6 +6,48 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 router-outlet + * {
     flex: 1;
+    display: flex;
+}
+
+.side-nav {
+  flex: 0 15%;
+  display: flex;
+  flex-flow: column nowrap;
+  border-right: solid 1px #c1a301;
+}
+
+.nav-btn-container button {
+  border-radius: 0px;
+  height: 60px !important;
+  justify-content: flex-start;
+  padding-left: 20px;
+  width: 100%;
+  font-size: 1rem;
+}
+.nav-btn-container > button {
+  border-bottom: solid 1px #c1a301;
+  padding-left: 20px;
+}
+
+.nav-btn-container > button.selected {
+  box-shadow: 0 3px 6px -2px grey;
+  margin-bottom: 2px;
+}
+
+.nav-child-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.nav-child-container > button {
+  padding-left: 60px;
+  border-bottom: solid 1px #ededed;
+}
+
+.title-val-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer {
@@ -183,6 +225,13 @@ p {
 
 .mdc-form-field>label {
   white-space: nowrap;
+}
+
+mat-panel-title {
+  font-size: 18px;
+}
+mat-expansion-panel-header {
+  padding: 8px 24px !important;
 }
 
 .image-blurred-edge {

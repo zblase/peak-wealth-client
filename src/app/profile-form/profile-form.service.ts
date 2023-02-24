@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ProfileFormService {
 
-  url: string = 'http://localhost:5091/api/profileforms';
+  url: string = 'https://peakwealthtest.azurewebsites.net/api/profileforms';
   forms: any;
 
   constructor(private http: HttpClient) {}

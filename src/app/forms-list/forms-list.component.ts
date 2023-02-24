@@ -22,4 +22,13 @@ export class FormsListComponent implements OnInit {
       complete: () => console.log('completed')
     });
   }
+
+  formatDate(dateStr: string) {
+    var date = new Date(dateStr);
+    return date.toLocaleDateString();
+  }
+
+  deleteForm(id: string) {
+
+  }
 }

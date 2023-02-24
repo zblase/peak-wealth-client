@@ -23,6 +23,7 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './auth-interceptor';
 import { JwtModule } from "@auth0/angular-jwt";
+import {MatTreeModule} from '@angular/material/tree';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { JwtModule } from "@auth0/angular-jwt";
     MatCheckboxModule,
     MatRadioModule,
     MatExpansionModule,
-    JwtModule
+    JwtModule,
+    MatTreeModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  url = "http://localhost:5091/api/adminusers/"
+  url = "https://peakwealthtest.azurewebsites.net/api/adminusers/"
   private userAuthenticated = false;
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -35,8 +35,9 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  isUserAuth() {
-    return !!sessionStorage.getItem('adminToken');
-    //return this.userAuthenticated;
+  public isUserAuth(): Observable<boolean> {
+    console.log(sessionStorage.getItem('adminToken'))
+    var res = this.http.get<boolean>(this.url + 'isvalid/' + sessionStorage.getItem('adminToken'));
+    return res;
   }
 }
