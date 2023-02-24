@@ -3,19 +3,22 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
+import { environment } from "src/environments/environment";
+
+const URL = environment.apiUrl + "/adminusers/"
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  url = "https://peakwealthtest.azurewebsites.net/api/adminusers/"
+  //url = "https://peakwealthtest.azurewebsites.net/api/adminusers/"
   private userAuthenticated = false;
 
   constructor(private http: HttpClient, private router: Router) { }
 
   login(password: string) {
-    this.http.get<{ token: string, expiresIn: number }>(this.url + 'login/' + password).subscribe((res) => {
+    this.http.get<{ token: string, expiresIn: number }>(URL + 'login/' + password).subscribe((res) => {
       if (res.token) {
         this.userAuthenticated = true;
         setTimeout(() => {
@@ -37,7 +40,7 @@ export class AuthService {
 
   public isUserAuth(): Observable<boolean> {
     console.log(sessionStorage.getItem('adminToken'))
-    var res = this.http.get<boolean>(this.url + 'isvalid/' + sessionStorage.getItem('adminToken'));
+    var res = this.http.get<boolean>(URL + 'isvalid/' + sessionStorage.getItem('adminToken'));
     return res;
   }
 }
