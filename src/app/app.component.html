@@ -7,7 +7,7 @@
         style="height: 75%; cursor: pointer"
       />
 
-      <div style="display: flex; gap: 2.5%; height: 100%; align-items: center; justify-content: center; flex: 1;">
+      <div class="hide-mobile header-btn-wrapper">
         <button mat-button color="primary" class="btn-tab">ABOUT</button>
         <button mat-button color="primary" class="btn-tab">WHY US</button>
         <button mat-button color="primary" class="btn-tab">SERVICES</button>
@@ -15,8 +15,13 @@
         <button mat-button color="primary" class="btn-tab">EVENTS</button>
         <button mat-button color="primary" class="btn-tab">CONTACT</button>
       </div>
-      
-      <button mat-raised-button color="primary" class="btn-tab" routerLink="calendar">BOOK AN APPOINTMENT</button>
+
+      <button mat-raised-button color="primary" class="btn-tab hide-mobile" routerLink="calendar">
+        BOOK AN APPOINTMENT
+      </button>
+      <button mat-fab color="primary" class="hide-desktop" routerLink="calendar">
+        <mat-icon>calendar_today</mat-icon>
+      </button>
     </mat-toolbar>
   </div>
 
@@ -24,14 +29,16 @@
     <router-outlet></router-outlet>
 
     <div class="footer">
-      <div style="align-items: flex-start;">
+      <div class="content" style="align-items: flex-start;">
         <img src="../assets/PW_Logo.png" style="height: 40px; margin-bottom: 20px;"/>
         <h3>Andrew Rojas</h3>
         <p><strong>Email: </strong> andrew@pwa.com</p>
         <p style="word-spacing: 0px;"><strong>Phone: </strong> (480) 798-0294</p>
       </div>
 
-      <div style="justify-content: center; border: solid 1px #c1a301; border-width: 0px 1px 0px 1px; margin: 0 6% 0 6%;">
+      <div class="divider"></div>
+
+      <div class="content" style="justify-content: center;">
         <button mat-button color="primary" class="btn-tab">ABOUT</button>
         <button mat-button color="primary" class="btn-tab">WHY US</button>
         <button mat-button color="primary" class="btn-tab">SERVICES</button>
@@ -40,7 +47,9 @@
         <button mat-button color="primary" class="btn-tab">CONTACT</button>
       </div>
 
-      <div style="align-items: center; gap: 10px;">
+      <div class="divider"></div>
+
+      <div class="content" style="align-items: center; gap: 10px;">
         <h3>Inqueries:</h3>
         <input placeholder="Name">
         <input placeholder="Email">

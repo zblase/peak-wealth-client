@@ -56,6 +56,17 @@ router-outlet + * {
     padding: 20px;
     background-color: #333333;
     border-top: solid 2px #c1a301;
+    gap: 4%;
+}
+
+.footer > .divider {
+  background-color: #c1a301;
+  flex: 0 1px;
+}
+
+.footer > .content {
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .footer > div {
@@ -331,4 +342,28 @@ mat-expansion-panel-header {
     to {
         fill: red;
     }
+}
+
+@media (max-width: 1000px) {
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .footer {
+    flex-flow: column nowrap;
+  }
+
+  .footer > .divider {
+    margin: 4% 0 4% 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hide-desktop {
+    display: none !important;
+  }
+
+  .footer > .divider {
+    margin: 0 4% 0 4%;
+  }
 }

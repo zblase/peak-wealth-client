@@ -1,0 +1,8 @@
+.header-btn-wrapper {
+  display: flex;
+  gap: 2.5%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
