@@ -1,5 +1,5 @@
 <div style="display: flex; flex: 1;">
-  <div class="side-nav">
+  <div class="side-nav hide-mobile">
     <div class="nav-btn-container" *ngFor="let btn of navButtons">
       <button mat-button (click)="btn.selected = !btn.selected" [ngClass]="btn.selected ? 'selected' : ''">
         <mat-icon>keyboard_arrow_down</mat-icon> {{btn.name}}

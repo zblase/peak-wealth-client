@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from "src/environments/environment";
 
-const URL = environment.apiUrl + "/profileforms/"
+const URL = environment.apiUrl + "profileforms/"
 
 @Injectable ({
   providedIn: 'root'
@@ -20,6 +20,7 @@ export class ProfileFormService {
   }
 
   postForm(form: any) {
+    console.dir(form)
     this.http.post(URL, form).subscribe((res) => {
       console.dir(res);
 

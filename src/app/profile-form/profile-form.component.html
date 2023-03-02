@@ -4,7 +4,7 @@
 
     <form [formGroup]="form" (ngSubmit)="submit()">
       <div class="section" style="border: none;">
-        <div class="flex-container gap-40 row">
+        <div class="flex-container gap-40 row wrap">
 
           <mat-radio-group formControlName="mStatus" class="flex-container gap-10">
             <label>Marital Status:</label>
@@ -43,7 +43,7 @@
           </div>
         </div>
 
-        <div class="flex-container gap-10">
+        <div class="flex-container gap-10 row wrap">
           <label>Employment status:</label>
           <mat-radio-group formControlName="eStatusA" class="flex-container gap-10">
             <mat-radio-button color="primary" [value]="'Employed'">Employed</mat-radio-button>
@@ -55,7 +55,7 @@
           <input formControlName="eStatusOtherA">
         </div>
 
-        <div class="flex-container gap-40">
+        <div class="flex-container gap-40 row wrap">
           <div class="flex-container gap-10">
             <label>Employer name:</label>
             <input formControlName="eNameA">
@@ -71,7 +71,7 @@
             <label>Employer address:</label>
             <input formControlName="eAddressA">
           </div>
-          <div class="flex-container gap-40">
+          <div class="flex-container gap-40 wrap">
             <div class="flex-container gap-10 flex-10">
               <label>City:</label>
               <input formControlName="eCityA">
@@ -103,7 +103,7 @@
               <label>ID#:</label>
               <input formControlName="idA">
             </div>
-            <div class="flex-container gap-40">
+            <div class="flex-container gap-40 wrap">
               <div class="flex-container gap-10 flex-10">
                 <label>Issuer (state, gov't agency, etc.):</label>
                 <input formControlName="issuerA">
@@ -126,7 +126,7 @@
           <input formControlName="nameB">
         </div>
 
-        <div class="flex-container gap-40">
+        <div class="flex-container gap-40 wrap">
           <div class="flex-container gap-10">
             <label>SSN:</label>
             <input formControlName="ssnB">
@@ -137,7 +137,7 @@
           </div>
         </div>
 
-        <div class="flex-container gap-10">
+        <div class="flex-container gap-10 wrap">
           <label>Employment status:</label>
           <mat-radio-group formControlName="eStatusB" class="flex-container gap-10">
             <mat-radio-button color="primary" [value]="'Employed'">Employed</mat-radio-button>
@@ -149,7 +149,7 @@
           <input formControlName="eStatusOtherB">
         </div>
 
-        <div class="flex-container gap-40">
+        <div class="flex-container gap-40 row wrap">
           <div class="flex-container gap-10">
             <label>Employer name:</label>
             <input formControlName="eNameB">
@@ -165,7 +165,7 @@
             <label>Employer address:</label>
             <input formControlName="eAddressB">
           </div>
-          <div class="flex-container gap-40">
+          <div class="flex-container gap-40 wrap">
             <div class="flex-container gap-10 flex-10">
               <label>City:</label>
               <input formControlName="eCityB">
@@ -197,7 +197,7 @@
               <label>ID#:</label>
               <input formControlName="idB">
             </div>
-            <div class="flex-container gap-40">
+            <div class="flex-container gap-40 wrap">
               <div class="flex-container gap-10 flex-10">
                 <label>Issuer (state, gov't agency, etc.):</label>
                 <input formControlName="issuerB">
@@ -219,7 +219,7 @@
             <label>Primary address:</label>
             <input formControlName="pAddress">
           </div>
-          <div class="flex-container gap-40">
+          <div class="flex-container gap-40 wrap">
             <div class="flex-container gap-10 flex-10">
               <label>City:</label>
               <input formControlName="pCity">
@@ -243,7 +243,7 @@
             <label>Secondary address:</label>
             <input formControlName="sAddress">
           </div>
-          <div class="flex-container gap-40">
+          <div class="flex-container gap-40 wrap">
             <div class="flex-container gap-10 flex-10">
               <label>City:</label>
               <input formControlName="sCity">
@@ -262,14 +262,14 @@
           </div>
         </div>
 
-        <div class="flex-container gap-10">
+        <div class="flex-container gap-10 wrap">
           <label>Dates at secondary address (if applicable):</label>
           <input type="date" formControlName="sDateA" required>
           <label>to</label>
           <input type="date" formControlName="sDateB" required>
         </div>
 
-        <div class="flex-container gap-40">
+        <div class="flex-container gap-40 wrap">
           <div class="flex-container gap-10">
             <label>Home phone:</label>
             <input formControlName="hPhone">
@@ -280,7 +280,7 @@
           </div>
         </div>
 
-        <div class="flex-container gap-40">
+        <div class="flex-container gap-40 wrap">
           <div class="flex-container gap-10">
             <label>Primary email:</label>
             <input formControlName="pEmail">

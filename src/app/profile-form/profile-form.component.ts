@@ -69,19 +69,10 @@ export class ProfileFormComponent implements OnInit {
   constructor(private formService: ProfileFormService, private authService: AuthService){}
 
   ngOnInit(): void {
-    //this.authService.login('');
-    this.formService.getForms().subscribe({
-      next: (res) => {
-        //this.forms = res;
-        console.dir(res);
-      },
-      error: err => console.log(err),
-      complete: () => console.log('completed')
-    });
 
     this.form = new FormGroup({
       mStatus: new FormControl(''),
-      mDate: new FormControl(''),
+      mDate: new FormControl(new Date()),
       mMonth: new FormControl(''),
       mDay: new FormControl(''),
       mYear: new FormControl(''),
